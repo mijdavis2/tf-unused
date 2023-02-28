@@ -19,7 +19,7 @@ Find unused variables in terraform modules.
 
 ## Installation
 
-- Download binary for appropriate platform from [releases](https://github.com/nvkv/tf-unused/releases) page.
+- Download binary for appropriate platform from [releases](https://github.com/mijdavis2/tf-unused/releases) page.
 - Put it somewhere in `$PATH`
 
 ## Usage
@@ -54,11 +54,11 @@ In tests/fixtures/has_unused/some.tfvars:
 
 ## Using with pre-commit
 
-Requires [rust and cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+Requires [docker](https://docs.docker.com/engine/install/).
 
 Add this to your `.pre-commit-config.yaml`:
 
     -   repo: https://github.com/mijdavis2/tf-unused
         sha: ''  # Use the sha / tag you want to point at
         hooks:
-        -   id: tf_unused
+        -   id: tf-unused
