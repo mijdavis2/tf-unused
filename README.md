@@ -1,8 +1,10 @@
-> Forked from https://github.com/nvkv/tf-unused and migrated to docker-based pre-commit hook by [mijdavis2](https://github.com/mijdavis2).
-
 # tf-unused
 
-Find unused variables in terraform module.
+[![release](https://img.shields.io/github/release/mijdavis2/tf-unused.svg)](https://github.com/mijdavis2/tf-unused/releases) [![build](https://github.com/mijdavis2/tf-unused/actions/workflows/build.yaml/badge.svg)](https://github.com/mijdavis2/tf-unused/actions/workflows/build.yaml) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit) [![license](https://img.shields.io/github/license/mijdavis2/tf-unused.svg)](https://github.com/mijdavis2/tf-unused/blob/master/LICENSE.md) [![downloads](https://img.shields.io/github/downloads/mijdavis2/tf-unused/total.svg)](https://github.com/mijdavis2/tf-unused/releases)
+
+Find unused variables in terraform modules.
+
+> Forked from https://github.com/nvkv/tf-unused and migrated to docker_image based pre-commit hook.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->

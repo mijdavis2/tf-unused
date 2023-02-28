@@ -1,7 +1,9 @@
 IMAGE_NAME = tf-unused
+NAMESPACE = mijdavis2
 GIT_TAG = $(shell git describe --tags HEAD)
 TAG ?= $(GIT_TAG)
 DOCKER_TAG ?= $(IMAGE_NAME):$(TAG)
+DOCKER_URL = ghcr.io/$(NAMESPACE)/$(DOCKER_TAG)
 
 require:
 	@pip --version >/dev/null 2>&1 || (echo "ERROR: pip is required. Please install python/pip via pyenv:\n		https://github.com/pyenv/pyenv"; exit 1)
@@ -27,10 +29,13 @@ build: clean
 		rust:1.67-bullseye cargo install --path . --target-dir ./target
 
 publish:
-	gh release upload \
+	gh release upload --clobber \
 		--repo mijdavis2/tf-unused \
-		$(TAG) target/release/tf-unused
+		$(TAG) ./target/release/tf-unused
 
-test-docker:
+build-docker:
 	docker build --network=host -t $(DOCKER_TAG) .
-	docker run --rm $(DOCKER_TAG) tf-unused --version
+
+publish-docker: build-docker
+	docker tag $(DOCKER_TAG) $(DOCKER_URL)
+	docker push $(DOCKER_URL)

@@ -2,6 +2,7 @@
   name: tf-unused
   description: Checks for unused variables in tf modules
   entry: tf-unused
-  language: docker
+  language: docker_image
+  entry: ghcr.io/mijdavis2/tf-unused:0.4.0
   always_run: true
   pass_filenames: false
