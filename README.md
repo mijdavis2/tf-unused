@@ -58,7 +58,7 @@ Requires [docker](https://docs.docker.com/engine/install/).
 
 Add this to your `.pre-commit-config.yaml`:
 
-    -   repo: https://github.com/mijdavis2/tf-unused
-        sha: ''  # Use the sha / tag you want to point at
-        hooks:
-        -   id: tf-unused
+    - repo: https://github.com/mijdavis2/tf-unused
+      sha: ''  # Use the sha / tag you want to point at
+      hooks:
+      - id: tf-unused
