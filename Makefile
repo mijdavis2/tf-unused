@@ -28,7 +28,7 @@ build: clean
 		-u $(shell id -u ${USER}):$(shell id -g ${USER}) \
 		rust:1.67-bullseye cargo install --path . --target-dir ./target
 
-publish:
+publish: build
 	gh release upload --clobber \
 		--repo mijdavis2/tf-unused \
 		$(TAG) ./target/release/tf-unused
